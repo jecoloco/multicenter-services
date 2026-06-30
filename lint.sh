@@ -2,7 +2,7 @@
 
 cd node/
 [ -d node_modules ] && rm -rf node_modules
-yarn cache clean
-yarn  --frozen-lockfile
+/usr/local/bin/yarn cache clean
+/usr/local/bin/yarn --frozen-lockfile
 cd ..
-yarn lint
+/usr/local/bin/yarn lint
