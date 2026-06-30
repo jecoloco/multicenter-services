@@ -1,10 +1,9 @@
 {
-  "name": "service-example",
-  "vendor": "vtex",
+  "name": "services",
+  "vendor": "multicenter",
   "version": "0.3.0",
-  "title": "Service Example",
-  "description": "Reference app for VTEX IO Services",
-  "mustUpdateAt": "2018-01-04",
+  "title": "Multicenter Services",
+  "description": "Servicios internos de Multicenter",
   "categories": [],
   "dependencies": {},
   "builders": {
@@ -21,6 +20,13 @@
       "attrs": {
         "host": "httpstat.us",
         "path": "*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "apipromatrix.multicenter.com.bo",
+        "path": "/MulticardApi/*"
       }
     },
     {

@@ -1,13 +1,18 @@
 {
   "memory": 256,
   "ttl": 10,
-  "timeout": 2,
+  "timeout": 10,
   "minReplicas": 2,
   "maxReplicas": 4,
   "workers": 1,
   "routes": {
     "status": {
       "path": "/_v/status/:code",
+      "public": true
+    },
+    "authenticate": {
+      "path": "/_v/private/authenticate",
+      "method": "POST",
       "public": true
     }
   }
