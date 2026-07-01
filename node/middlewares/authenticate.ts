@@ -135,7 +135,7 @@ export async function authenticate(ctx: Context, next: () => Promise<any>) {
     }
   }
 
-  console.log('\n===== RESPONSE =====')
+  console.log('\n===== RESPONSE =====.')
   console.log({
     status: ctx.status,
     body: ctx.body,
