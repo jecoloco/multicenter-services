@@ -54,10 +54,25 @@ export async function authenticate(ctx: Context, next: () => Promise<any>) {
     forwardedPort: ctx.get('x-forwarded-port'),
   })
 
-  // 🚨 Nueva validación: si no hay adminUserAuthToken, bloqueamos
-  if (!ctx.vtex?.adminUserAuthToken) {
+  // 🚨 Nueva validación: permitir solo ciertos orígenes
+  const origin = ctx.get('origin') || ''
+  const referer = ctx.get('referer') || ''
+
+  const allowedOrigins = [
+    'https://simon--multicenter.myvtex.com',
+    'https://multicenter.myvtex.com',
+    'https://www.multicenter.com',
+  ]
+
+  const isAllowed = allowedOrigins.some(
+    (o) => origin.startsWith(o) || referer.startsWith(o)
+  )
+
+  if (!isAllowed) {
     console.log('\n===== RESULTADO =====')
-    console.log('❌ Acceso denegado: adminUserAuthToken no presente.')
+    console.log(
+      `❌ Acceso denegado: origen no permitido (${origin} / ${referer})`
+    )
 
     ctx.status = 403
     ctx.body = {
@@ -103,10 +118,7 @@ export async function authenticate(ctx: Context, next: () => Promise<any>) {
     console.log('✅ Token obtenido correctamente.')
 
     console.log('\n===== CONSULTANDO CLIENTE =====')
-    console.log({
-      amount,
-      document,
-    })
+    console.log({ amount, document })
 
     const customer = await ctx.clients.authClient.getCustomerByDoc(
       token,
@@ -130,16 +142,11 @@ export async function authenticate(ctx: Context, next: () => Promise<any>) {
     })
 
     ctx.status = err.response?.status ?? 500
-    ctx.body = err.response?.data ?? {
-      error: err.message,
-    }
+    ctx.body = err.response?.data ?? { error: err.message }
   }
 
   console.log('\n===== RESPONSE =====.')
-  console.log({
-    status: ctx.status,
-    body: ctx.body,
-  })
+  console.log({ status: ctx.status, body: ctx.body })
 
   console.log('============================================================')
   console.log('============== FIN REQUEST AUTHENTICATE ====================')
