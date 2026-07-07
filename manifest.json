@@ -30,6 +30,13 @@
       }
     },
     {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "sotbo6ympg.execute-api.us-east-1.amazonaws.com",
+        "path": "*"
+      }
+    },
+    {
       "name": "colossus-fire-event"
     },
     {

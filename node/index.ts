@@ -5,6 +5,7 @@ import { Clients } from './clients'
 import { status } from './middlewares/status'
 import { validate } from './middlewares/validate'
 import { authenticate } from './middlewares/authenticate'
+import { pointValue } from './middlewares/multipuntos/pointValue'
 
 const TIMEOUT_MS = 5000
 
@@ -49,12 +50,8 @@ declare global {
 export default new Service({
   clients,
   routes: {
-    status: method({
-      GET: [validate, status],
-    }),
-
-    authenticate: method({
-      POST: [authenticate],
-    }),
+    status: method({ GET: [validate, status] }),
+    authenticate: method({ POST: [authenticate] }),
+    pointvalue: method({ GET: [pointValue] }),
   },
 })
