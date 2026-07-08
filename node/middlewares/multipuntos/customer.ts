@@ -10,7 +10,6 @@ export async function customer(ctx: Context, next: () => Promise<any>) {
     'https://simon--multicenter.myvtex.com',
     'https://multicenter.myvtex.com',
     'https://www.multicenter.com',
-    'postman',
   ]
 
   const isAllowed = allowedOrigins.some(

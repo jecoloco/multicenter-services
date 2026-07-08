@@ -24,6 +24,11 @@
       "path": "/_v/private/customer",
       "method": "POST",
       "public": true
+    },
+    "authtoken": {
+      "path": "/_v/private/authtoken",
+      "method": "POST",
+      "public": true
     }
   }
 }
