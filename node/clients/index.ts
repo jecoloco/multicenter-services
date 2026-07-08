@@ -3,6 +3,7 @@ import { IOClients } from '@vtex/api'
 import Status from './status'
 import AuthClient from './authClient'
 import PointValueClient from './multipuntos/pointValueClient'
+import CustomerClient from './multipuntos/customerClient'
 
 // Extend the default IOClients implementation with our own custom clients.
 export class Clients extends IOClients {
@@ -16,5 +17,9 @@ export class Clients extends IOClients {
 
   public get pointValueClient() {
     return this.getOrSet('pointValueClient', PointValueClient)
+  }
+
+  public get customerClient() {
+    return this.getOrSet('customerClient', CustomerClient)
   }
 }

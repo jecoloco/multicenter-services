@@ -6,6 +6,7 @@ import { status } from './middlewares/status'
 import { validate } from './middlewares/validate'
 import { authenticate } from './middlewares/authenticate'
 import { pointValue } from './middlewares/multipuntos/pointValue'
+import { customer } from './middlewares/multipuntos/customer'
 
 const TIMEOUT_MS = 5000
 
@@ -53,5 +54,6 @@ export default new Service({
     status: method({ GET: [validate, status] }),
     authenticate: method({ POST: [authenticate] }),
     pointvalue: method({ GET: [pointValue] }),
+    customer: method({ POST: [customer] }),
   },
 })
