@@ -9,6 +9,7 @@ import PaymentPreviewClient from './multipuntos/paymentPreviewClient'
 import CustomerOtpClient from './multipuntos/customerOtpClient'
 import CustomerOtpValidateClient from './multipuntos/customerOtpValidateClient'
 import CustomerDetailClient from './multipuntos/customerDetailClient'
+import CustomerUpdateClient from './multipuntos/customerUpdateClient'
 
 // Extend the default IOClients implementation with our own custom clients.
 export class Clients extends IOClients {
@@ -46,5 +47,9 @@ export class Clients extends IOClients {
 
   public get customerDetailClient() {
     return this.getOrSet('customerDetailClient', CustomerDetailClient)
+  }
+
+  public get customerUpdateClient() {
+    return this.getOrSet('customerUpdateClient', CustomerUpdateClient)
   }
 }
