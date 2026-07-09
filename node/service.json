@@ -49,6 +49,11 @@
       "path": "/_v/private/paymentpreviewupdatecustomer",
       "method": "PATCH",
       "public": true
+    },
+    "paymentpreviewaccount": {
+      "path": "/_v/private/paymentpreviewaccount",
+      "method": "POST",
+      "public": true
     }
   }
 }
