@@ -34,6 +34,11 @@
       "path": "/_v/private/paymentpreview",
       "method": "POST",
       "public": true
+    },
+    "customerotpvalidate": {
+      "path": "/_v/private/customerotpvalidate",
+      "method": "POST",
+      "public": true
     }
   }
 }
