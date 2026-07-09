@@ -10,6 +10,7 @@ import { customer } from './middlewares/multipuntos/customer'
 import { authToken } from './middlewares/multipuntos/authToken'
 import { paymentPreview } from './middlewares/multipuntos/paymentPreview'
 import { customerOtpValidate } from './middlewares/multipuntos/customerOtpValidate'
+import { paymentPreviewCustomer } from './middlewares/multipuntos/paymentPreviewCustomer'
 
 const TIMEOUT_MS = 15000
 
@@ -48,5 +49,6 @@ export default new Service({
     authtoken: method({ POST: [authToken] }),
     paymentpreview: method({ POST: [paymentPreview] }),
     customerotpvalidate: method({ POST: [customerOtpValidate] }),
+    paymentpreviewcustomer: method({ POST: [paymentPreviewCustomer] }),
   },
 })
