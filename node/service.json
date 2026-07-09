@@ -29,6 +29,11 @@
       "path": "/_v/private/authtoken",
       "method": "POST",
       "public": true
+    },
+    "paymentpreview": {
+      "path": "/_v/private/paymentpreview",
+      "method": "POST",
+      "public": true
     }
   }
 }

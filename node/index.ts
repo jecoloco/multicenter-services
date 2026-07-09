@@ -8,6 +8,7 @@ import { authenticate } from './middlewares/authenticate'
 import { pointValue } from './middlewares/multipuntos/pointValue'
 import { customer } from './middlewares/multipuntos/customer'
 import { authToken } from './middlewares/multipuntos/authToken'
+import { paymentPreview } from './middlewares/multipuntos/paymentPreview'
 
 const TIMEOUT_MS = 15000
 
@@ -44,5 +45,6 @@ export default new Service({
     pointvalue: method({ GET: [pointValue] }),
     customer: method({ POST: [customer] }),
     authtoken: method({ POST: [authToken] }),
+    paymentpreview: method({ POST: [paymentPreview] }),
   },
 })
