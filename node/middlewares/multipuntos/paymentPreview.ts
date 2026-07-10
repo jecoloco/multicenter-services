@@ -52,7 +52,10 @@ export async function paymentPreview(ctx: Context, next: () => Promise<any>) {
     console.log('Respuesta de OTP:', otpResponse)
 
     ctx.status = 200
-    ctx.body = otpResponse
+    ctx.body = {
+      ...(otpResponse && typeof otpResponse === 'object' ? otpResponse : {}),
+      message: customerId,
+    }
   } catch (err: any) {
     console.error('Error en paymentPreview middleware:', err)
     console.error('Config de la petición fallida:', err.config) // 👀 log de la config Axios
