@@ -4,14 +4,14 @@ import { ExternalClient } from '@vtex/api'
 export default class PointValueClient extends ExternalClient {
   constructor(context: IOContext, options?: InstanceOptions) {
     super(
-      'https://sotbo6ympg.execute-api.us-east-1.amazonaws.com',
+      'https://3iblkla70c.execute-api.us-east-1.amazonaws.com', // 👈 prod base URL
       context,
       options
     )
   }
 
   public async getPointValue(): Promise<any> {
-    return this.http.get('/dev/api/v1/multipoint/transaction/pointvalue', {
+    return this.http.get('/prod/api/v1/multipoint/transaction/pointvalue', {
       headers: {
         'Content-Type': 'application/json',
       },

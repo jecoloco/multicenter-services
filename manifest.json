@@ -25,6 +25,13 @@
     {
       "name": "outbound-access",
       "attrs": {
+        "host": "3iblkla70c.execute-api.us-east-1.amazonaws.com",
+        "path": "*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
         "host": "apipromatrix.multicenter.com.bo",
         "path": "/MulticardApi/*"
       }
