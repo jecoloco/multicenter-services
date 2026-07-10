@@ -5,7 +5,7 @@ import { ExternalClient } from '@vtex/api'
 export default class PaymentPreviewClient extends ExternalClient {
   constructor(context: IOContext, options?: InstanceOptions) {
     super(
-      'https://sotbo6ympg.execute-api.us-east-1.amazonaws.com',
+      'https://3iblkla70c.execute-api.us-east-1.amazonaws.com',
       context,
       options
     )
@@ -13,7 +13,7 @@ export default class PaymentPreviewClient extends ExternalClient {
 
   public async getPreview(body: any, token: string): Promise<any> {
     return this.http.post(
-      '/dev/api/v1/multipoint/transaction/payment/preview',
+      '/prod/api/v1/multipoint/transaction/payment/preview',
       body,
       {
         headers: {

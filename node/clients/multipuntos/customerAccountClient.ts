@@ -4,18 +4,18 @@ import { ExternalClient } from '@vtex/api'
 export default class CustomerAccountClient extends ExternalClient {
   constructor(context: IOContext, options?: InstanceOptions) {
     super(
-      'https://sotbo6ympg.execute-api.us-east-1.amazonaws.com',
+      'https://3iblkla70c.execute-api.us-east-1.amazonaws.com',
       context,
       options
     )
   }
 
   public async getAccount(accountId: string): Promise<any> {
-    const url = `/dev/api/v1/multipoint/customer/${accountId}/account`
+    const url = `/prod/api/v1/multipoint/customer/${accountId}/account`
 
     console.log(
       'Llamando a Customer Account con URL completa (GET):',
-      `https://sotbo6ympg.execute-api.us-east-1.amazonaws.com${url}`
+      `https://3iblkla70c.execute-api.us-east-1.amazonaws.com${url}`
     )
 
     return this.http.get(url, {
