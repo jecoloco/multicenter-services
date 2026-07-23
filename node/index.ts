@@ -13,6 +13,13 @@ import { customerOtpValidate } from './middlewares/multipuntos/customerOtpValida
 import { paymentPreviewCustomer } from './middlewares/multipuntos/paymentPreviewCustomer'
 import { paymentPreviewUpdateCustomer } from './middlewares/multipuntos/paymentPreviewUpdateCustomer'
 import { paymentPreviewAccount } from './middlewares/multipuntos/paymentPreviewAccount'
+import { authenticate as multicardAuthenticate } from './middlewares/multicard/authenticate'
+import { customerStatus as multicardCustomerStatus } from './middlewares/multicard/customerStatus'
+import { customer as multicardCustomer } from './middlewares/multicard/customer'
+import { statement as multicardStatement } from './middlewares/multicard/statement'
+import { messagingAuth as multicardMessagingAuth } from './middlewares/multicard/messagingAuth'
+import { otpSend as multicardOtpSend } from './middlewares/multicard/otpSend'
+import { otpValidate as multicardOtpValidate } from './middlewares/multicard/otpValidate'
 
 const TIMEOUT_MS = 15000
 
@@ -56,5 +63,12 @@ export default new Service({
     paymentpreviewupdatecustomer: method({
       PATCH: [paymentPreviewUpdateCustomer],
     }),
+    multicardauthenticate: method({ POST: [multicardAuthenticate] }),
+    multicardcustomerstatus: method({ POST: [multicardCustomerStatus] }),
+    multicardcustomer: method({ POST: [multicardCustomer] }),
+    multicardstatement: method({ POST: [multicardStatement] }),
+    multicardmessagingauth: method({ POST: [multicardMessagingAuth] }),
+    multicardotpsend: method({ POST: [multicardOtpSend] }),
+    multicardotpvalidate: method({ POST: [multicardOtpValidate] }),
   },
 })

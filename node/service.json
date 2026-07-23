@@ -54,6 +54,41 @@
       "path": "/_v/private/paymentpreviewaccount",
       "method": "POST",
       "public": true
+    },
+    "multicardauthenticate": {
+      "path": "/_v/private/multicard/authenticate",
+      "method": "POST",
+      "public": true
+    },
+    "multicardcustomerstatus": {
+      "path": "/_v/private/multicard/customer-status",
+      "method": "POST",
+      "public": true
+    },
+    "multicardcustomer": {
+      "path": "/_v/private/multicard/customer",
+      "method": "POST",
+      "public": true
+    },
+    "multicardstatement": {
+      "path": "/_v/private/multicard/statement",
+      "method": "POST",
+      "public": true
+    },
+    "multicardmessagingauth": {
+      "path": "/_v/private/multicard/messaging-auth",
+      "method": "POST",
+      "public": true
+    },
+    "multicardotpsend": {
+      "path": "/_v/private/multicard/otp-send",
+      "method": "POST",
+      "public": true
+    },
+    "multicardotpvalidate": {
+      "path": "/_v/private/multicard/otp-validate",
+      "method": "POST",
+      "public": true
     }
   }
 }

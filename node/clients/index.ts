@@ -11,6 +11,12 @@ import CustomerOtpValidateClient from './multipuntos/customerOtpValidateClient'
 import CustomerDetailClient from './multipuntos/customerDetailClient'
 import CustomerUpdateClient from './multipuntos/customerUpdateClient'
 import CustomerAccountClient from './multipuntos/customerAccountClient'
+import MulticardAuthenticateClient from './multicard/authenticateClient'
+import MulticardCustomerStatusClient from './multicard/customerStatusClient'
+import MulticardCustomerClient from './multicard/customerClient'
+import MulticardStatementClient from './multicard/statementClient'
+import MulticardMessagingAuthClient from './multicard/messagingAuthClient'
+import MulticardMessagingClient from './multicard/messagingClient'
 
 // Extend the default IOClients implementation with our own custom clients.
 export class Clients extends IOClients {
@@ -56,5 +62,38 @@ export class Clients extends IOClients {
 
   public get customerAccountClient() {
     return this.getOrSet('customerAccountClient', CustomerAccountClient)
+  }
+
+  public get multicardAuthenticateClient() {
+    return this.getOrSet(
+      'multicardAuthenticateClient',
+      MulticardAuthenticateClient
+    )
+  }
+
+  public get multicardCustomerStatusClient() {
+    return this.getOrSet(
+      'multicardCustomerStatusClient',
+      MulticardCustomerStatusClient
+    )
+  }
+
+  public get multicardCustomerClient() {
+    return this.getOrSet('multicardCustomerClient', MulticardCustomerClient)
+  }
+
+  public get multicardStatementClient() {
+    return this.getOrSet('multicardStatementClient', MulticardStatementClient)
+  }
+
+  public get multicardMessagingAuthClient() {
+    return this.getOrSet(
+      'multicardMessagingAuthClient',
+      MulticardMessagingAuthClient
+    )
+  }
+
+  public get multicardMessagingClient() {
+    return this.getOrSet('multicardMessagingClient', MulticardMessagingClient)
   }
 }
