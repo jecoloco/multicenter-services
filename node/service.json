@@ -89,6 +89,11 @@
       "path": "/_v/private/multicard/otp-validate",
       "method": "POST",
       "public": true
+    },
+    "multicardsalesbycustomer": {
+      "path": "/_v/private/multicard/sales-by-customer",
+      "method": "GET",
+      "public": true
     }
   }
 }

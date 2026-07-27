@@ -17,6 +17,7 @@ import MulticardCustomerClient from './multicard/customerClient'
 import MulticardStatementClient from './multicard/statementClient'
 import MulticardMessagingAuthClient from './multicard/messagingAuthClient'
 import MulticardMessagingClient from './multicard/messagingClient'
+import MulticardSalesByCustomerClient from './multicard/salesByCustomerClient'
 
 // Extend the default IOClients implementation with our own custom clients.
 export class Clients extends IOClients {
@@ -95,5 +96,12 @@ export class Clients extends IOClients {
 
   public get multicardMessagingClient() {
     return this.getOrSet('multicardMessagingClient', MulticardMessagingClient)
+  }
+
+  public get multicardSalesByCustomerClient() {
+    return this.getOrSet(
+      'multicardSalesByCustomerClient',
+      MulticardSalesByCustomerClient
+    )
   }
 }
