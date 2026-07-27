@@ -94,6 +94,11 @@
       "path": "/_v/private/multicard/sales-by-customer",
       "method": "GET",
       "public": true
+    },
+    "multicardpdfsalesbyid": {
+      "path": "/_v/private/multicard/pdf-sales-by-id",
+      "method": "GET",
+      "public": true
     }
   }
 }

@@ -3,25 +3,25 @@ export async function salesByCustomer(ctx: Context, next: () => Promise<any>) {
     '============= INICIO REQUEST MULTICARD SALES BY CUSTOMER ===================='
   )
 
-  //   const origin = ctx.get('origin') || ''
-  //   const referer = ctx.get('referer') || ''
+  const origin = ctx.get('origin') || ''
+  const referer = ctx.get('referer') || ''
 
-  //   const allowedOrigins = [
-  //     'https://simon--multicenter.myvtex.com',
-  //     'https://multicenter.myvtex.com',
-  //     'https://www.multicenter.com',
-  //   ]
+  const allowedOrigins = [
+    'https://simon--multicenter.myvtex.com',
+    'https://multicenter.myvtex.com',
+    'https://www.multicenter.com',
+  ]
 
-  //   const isAllowed = allowedOrigins.some(
-  //     (o) => origin.startsWith(o) || referer.startsWith(o)
-  //   )
+  const isAllowed = allowedOrigins.some(
+    (o) => origin.startsWith(o) || referer.startsWith(o)
+  )
 
-  //   if (!isAllowed) {
-  //     ctx.status = 403
-  //     ctx.body = { error: 'Acceso no autorizado' }
+  if (!isAllowed) {
+    ctx.status = 403
+    ctx.body = { error: 'Acceso no autorizado' }
 
-  //     return
-  //   }
+    return
+  }
 
   try {
     const authorizationHeader = ctx.get('authorization') || ''

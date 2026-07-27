@@ -18,6 +18,7 @@ import MulticardStatementClient from './multicard/statementClient'
 import MulticardMessagingAuthClient from './multicard/messagingAuthClient'
 import MulticardMessagingClient from './multicard/messagingClient'
 import MulticardSalesByCustomerClient from './multicard/salesByCustomerClient'
+import PdfSalesByIdClient from './multicard/pdfSalesByIdClient'
 
 // Extend the default IOClients implementation with our own custom clients.
 export class Clients extends IOClients {
@@ -103,5 +104,9 @@ export class Clients extends IOClients {
       'multicardSalesByCustomerClient',
       MulticardSalesByCustomerClient
     )
+  }
+
+  public get pdfSalesByIdClient() {
+    return this.getOrSet('pdfSalesByIdClient', PdfSalesByIdClient)
   }
 }
