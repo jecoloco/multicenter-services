@@ -3,7 +3,7 @@ import { ExternalClient } from '@vtex/api'
 
 export default class PdfSalesByIdClient extends ExternalClient {
   constructor(context: IOContext, options?: InstanceOptions) {
-    super('https://apitest.multicentercorp.com', context, options)
+    super('https://apipromatrix.multicenter.com.bo', context, options)
   }
 
   public async getPdfSalesById(
