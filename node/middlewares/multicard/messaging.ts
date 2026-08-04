@@ -30,9 +30,7 @@ export async function messaging(ctx: Context, next: () => Promise<any>) {
 
     console.log('Body recibido:', body)
 
-    const { token } = body
-    const { phone } = body
-    const { code } = body
+    const { token, phone, code, email, message } = body
 
     if (!token || (!phone && !code)) {
       ctx.status = 400
@@ -44,10 +42,12 @@ export async function messaging(ctx: Context, next: () => Promise<any>) {
     let response: any
 
     if (phone && !code) {
-      response = await ctx.clients.multicardMessagingClient.sendOtp(
+      response = await ctx.clients.multicardMessagingClient.sendOtp({
         token,
-        phone
-      )
+        phone,
+        email,
+        message,
+      })
     } else if (code && phone) {
       response = await ctx.clients.multicardMessagingClient.validateOtp(
         token,

@@ -27,8 +27,7 @@ export async function otpSend(ctx: Context, next: () => Promise<any>) {
 
   try {
     const body = await json(ctx.req)
-    const { token } = body
-    const { phone } = body
+    const { token, phone, email, message } = body
 
     if (!token || !phone) {
       ctx.status = 400
@@ -37,10 +36,12 @@ export async function otpSend(ctx: Context, next: () => Promise<any>) {
       return
     }
 
-    const response = await ctx.clients.multicardMessagingClient.sendOtp(
+    const response = await ctx.clients.multicardMessagingClient.sendOtp({
       token,
-      phone
-    )
+      phone,
+      email,
+      message,
+    })
 
     ctx.status = 200
     ctx.body = response

@@ -6,10 +6,21 @@ export default class MessagingClient extends ExternalClient {
     super('https://apipromatrix.multicenter.com.bo', context, options)
   }
 
-  public async sendOtp(token: string, phone: string): Promise<any> {
+  public async sendOtp(payload: {
+    token: string
+    phone: string
+    email?: string
+    message?: string
+  }): Promise<any> {
+    const { token, phone, email, message } = payload
+
     return this.http.post(
       '/Messaging/api/Message/SendCodeOTP',
-      { phone },
+      {
+        phone,
+        email,
+        message,
+      },
       {
         headers: {
           Authorization: `Bearer ${token}`,
