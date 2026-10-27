@@ -39,6 +39,13 @@
     {
       "name": "outbound-access",
       "attrs": {
+        "host": "multicenter.vtexcommercestable.com.br",
+        "path": "/api/dataentities/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
         "host": "apitest.multicentercorp.com",
         "path": "/MulticardApi/*"
       }

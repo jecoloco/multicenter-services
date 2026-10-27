@@ -99,6 +99,11 @@
       "path": "/_v/private/multicard/pdf-sales-by-id",
       "method": "GET",
       "public": true
+    },
+    "multicardrequest": {
+      "path": "/_v/private/multicard/request",
+      "method": "POST",
+      "public": true
     }
   }
 }

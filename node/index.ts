@@ -22,6 +22,7 @@ import { otpSend as multicardOtpSend } from './middlewares/multicard/otpSend'
 import { otpValidate as multicardOtpValidate } from './middlewares/multicard/otpValidate'
 import { salesByCustomer as multicardSalesByCustomer } from './middlewares/multicard/salesByCustomer'
 import { pdfSalesById } from './middlewares/multicard/pdfSalesById'
+import { multicardRequest } from './middlewares/multicard/multicardRequest'
 
 const TIMEOUT_MS = 15000
 
@@ -74,5 +75,6 @@ export default new Service({
     multicardotpvalidate: method({ POST: [multicardOtpValidate] }),
     multicardsalesbycustomer: method({ GET: [multicardSalesByCustomer] }),
     multicardpdfsalesbyid: method({ GET: [pdfSalesById] }),
+    multicardrequest: method({ POST: [multicardRequest] }),
   },
 })
