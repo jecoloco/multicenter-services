@@ -109,6 +109,11 @@
       "path": "/_v/private/tablescomponentmd/bannerfoot",
       "method": "GET",
       "public": true
+    },
+    "bannersecondary": {
+      "path": "/_v/private/tablescomponentmd/bannersecondary",
+      "method": "GET",
+      "public": true
     }
   }
 }

@@ -21,6 +21,7 @@ import MulticardSalesByCustomerClient from './multicard/salesByCustomerClient'
 import PdfSalesByIdClient from './multicard/pdfSalesByIdClient'
 import MulticardRequestClient from './multicard/multicardRequestClient'
 import BannerFootClient from './TablesComponentMD/bannerFootClient'
+import BannerSecondaryClient from './TablesComponentMD/bannerSecondaryClient'
 
 // Extend the default IOClients implementation with our own custom clients.
 export class Clients extends IOClients {
@@ -118,5 +119,9 @@ export class Clients extends IOClients {
 
   public get bannerFootClient() {
     return this.getOrSet('bannerFootClient', BannerFootClient)
+  }
+
+  public get bannerSecondaryClient() {
+    return this.getOrSet('bannerSecondaryClient', BannerSecondaryClient)
   }
 }
