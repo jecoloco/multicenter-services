@@ -23,6 +23,7 @@ import MulticardRequestClient from './multicard/multicardRequestClient'
 import BannerFootClient from './TablesComponentMD/bannerFootClient'
 import BannerSecondaryClient from './TablesComponentMD/bannerSecondaryClient'
 import SliderFootClient from './TablesComponentMD/sliderFootClient'
+import WorldSliderClient from './TablesComponentMD/worldSliderClient'
 
 // Extend the default IOClients implementation with our own custom clients.
 export class Clients extends IOClients {
@@ -128,5 +129,9 @@ export class Clients extends IOClients {
 
   public get sliderFootClient() {
     return this.getOrSet('sliderFootClient', SliderFootClient)
+  }
+
+  public get worldSliderClient() {
+    return this.getOrSet('worldSliderClient', WorldSliderClient)
   }
 }

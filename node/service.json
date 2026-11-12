@@ -119,6 +119,11 @@
       "path": "/_v/private/tablescomponentmd/sliderfoot",
       "method": "GET",
       "public": true
+    },
+    "worldslider": {
+      "path": "/_v/private/tablescomponentmd/worldslider",
+      "method": "GET",
+      "public": true
     }
   }
 }
