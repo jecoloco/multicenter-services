@@ -25,6 +25,7 @@ import { pdfSalesById } from './middlewares/multicard/pdfSalesById'
 import { multicardRequest } from './middlewares/multicard/multicardRequest'
 import { bannerFoot } from './middlewares/TablesComponentMD/bannerFoot'
 import { bannerSecondary } from './middlewares/TablesComponentMD/bannerSecondary'
+import { sliderFoot } from './middlewares/TablesComponentMD/sliderFoot'
 
 const TIMEOUT_MS = 15000
 
@@ -80,5 +81,6 @@ export default new Service({
     multicardrequest: method({ POST: [multicardRequest] }),
     bannerfoot: method({ GET: [bannerFoot] }),
     bannersecondary: method({ GET: [bannerSecondary] }),
+    sliderfoot: method({ GET: [sliderFoot] }),
   },
 })

@@ -114,6 +114,11 @@
       "path": "/_v/private/tablescomponentmd/bannersecondary",
       "method": "GET",
       "public": true
+    },
+    "sliderfoot": {
+      "path": "/_v/private/tablescomponentmd/sliderfoot",
+      "method": "GET",
+      "public": true
     }
   }
 }
