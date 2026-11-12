@@ -124,6 +124,11 @@
       "path": "/_v/private/tablescomponentmd/worldslider",
       "method": "GET",
       "public": true
+    },
+    "giftcardemitter": {
+      "path": "/_v/private/giftcardemitter",
+      "method": "POST",
+      "public": true
     }
   }
 }

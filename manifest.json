@@ -46,6 +46,34 @@
     {
       "name": "outbound-access",
       "attrs": {
+        "host": "multicenter.vtexcommercestable.com.br",
+        "path": "/api/giftcards"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "multicenter.vtexcommercestable.com.br",
+        "path": "/api/gift-card-system/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "multicenter.vtexcommercestable.com.br",
+        "path": "/api/oms/pvt/orders"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "multicenter.vtexcommercestable.com.br",
+        "path": "/api/mail-service/pvt/sendMail"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
         "host": "apitest.multicentercorp.com",
         "path": "/MulticardApi/*"
       }
